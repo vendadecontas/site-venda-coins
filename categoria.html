@@ -30,6 +30,7 @@
             width: 60%;
             margin: 20px auto;
             border-collapse: collapse;
+            display: none; /* Inicialmente, as tabelas ficam escondidas */
         }
 
         table, th, td {
@@ -76,6 +77,11 @@
             background-color: #000;
             border-radius: 5px;
         }
+
+        /* Mostra as tabelas quando ativadas */
+        .show-table {
+            display: block !important;
+        }
     </style>
 </head>
 <body>
@@ -86,117 +92,127 @@
 
     <!-- Links para navegar entre categorias -->
     <div class="category-link">
-        <a href="#freefire">Free Fire</a>
-        <a href="#fortnite">Fortnite</a>
-        <a href="#efootball">eFootball</a>
-        <a href="#fifa">FIFA</a>
-        <a href="#roblox">Roblox</a>
+        <a href="javascript:void(0)" onclick="showTable('freefire')">Free Fire</a>
+        <a href="javascript:void(0)" onclick="showTable('fortnite')">Fortnite</a>
+        <a href="javascript:void(0)" onclick="showTable('efootball')">eFootball</a>
+        <a href="javascript:void(0)" onclick="showTable('fifa')">FIFA</a>
+        <a href="javascript:void(0)" onclick="showTable('roblox')">Roblox</a>
     </div>
 
     <!-- Free Fire -->
-    <div id="freefire" class="category-title">Free Fire - Tabela de Preços</div>
-    <table>
-        <tr>
-            <th>Moeda</th>
-            <th>Preço</th>
-        </tr>
-        <tr>
-            <td>100 Diamantes</td>
-            <td>R$ 5,00</td>
-        </tr>
-        <tr>
-            <td>500 Diamantes</td>
-            <td>R$ 25,00</td>
-        </tr>
-        <tr>
-            <td>1000 Diamantes</td>
-            <td>R$ 50,00</td>
-        </tr>
-    </table>
+    <div id="freefire" class="category-title show-table">
+        <h2>Free Fire - Tabela de Preços</h2>
+        <table>
+            <tr>
+                <th>Moeda</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td>100 Diamantes</td>
+                <td>R$ 5,00</td>
+            </tr>
+            <tr>
+                <td>500 Diamantes</td>
+                <td>R$ 25,00</td>
+            </tr>
+            <tr>
+                <td>1000 Diamantes</td>
+                <td>R$ 50,00</td>
+            </tr>
+        </table>
+    </div>
 
     <!-- Fortnite -->
-    <div id="fortnite" class="category-title">Fortnite - Tabela de Preços</div>
-    <table>
-        <tr>
-            <th>Moeda</th>
-            <th>Preço</th>
-        </tr>
-        <tr>
-            <td>100 V-Bucks</td>
-            <td>R$ 5,00</td>
-        </tr>
-        <tr>
-            <td>500 V-Bucks</td>
-            <td>R$ 25,00</td>
-        </tr>
-        <tr>
-            <td>1000 V-Bucks</td>
-            <td>R$ 50,00</td>
-        </tr>
-    </table>
+    <div id="fortnite" class="category-title">
+        <h2>Fortnite - Tabela de Preços</h2>
+        <table>
+            <tr>
+                <th>Moeda</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td>100 V-Bucks</td>
+                <td>R$ 5,00</td>
+            </tr>
+            <tr>
+                <td>500 V-Bucks</td>
+                <td>R$ 25,00</td>
+            </tr>
+            <tr>
+                <td>1000 V-Bucks</td>
+                <td>R$ 50,00</td>
+            </tr>
+        </table>
+    </div>
 
     <!-- eFootball -->
-    <div id="efootball" class="category-title">eFootball - Tabela de Preços</div>
-    <table>
-        <tr>
-            <th>Moeda</th>
-            <th>Preço</th>
-        </tr>
-        <tr>
-            <td>100 Moedas</td>
-            <td>R$ 5,00</td>
-        </tr>
-        <tr>
-            <td>500 Moedas</td>
-            <td>R$ 25,00</td>
-        </tr>
-        <tr>
-            <td>1000 Moedas</td>
-            <td>R$ 50,00</td>
-        </tr>
-    </table>
+    <div id="efootball" class="category-title">
+        <h2>eFootball - Tabela de Preços</h2>
+        <table>
+            <tr>
+                <th>Moeda</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td>100 Moedas</td>
+                <td>R$ 5,00</td>
+            </tr>
+            <tr>
+                <td>500 Moedas</td>
+                <td>R$ 25,00</td>
+            </tr>
+            <tr>
+                <td>1000 Moedas</td>
+                <td>R$ 50,00</td>
+            </tr>
+        </table>
+    </div>
 
     <!-- FIFA -->
-    <div id="fifa" class="category-title">FIFA - Tabela de Preços</div>
-    <table>
-        <tr>
-            <th>Moeda</th>
-            <th>Preço</th>
-        </tr>
-        <tr>
-            <td>100 Moedas</td>
-            <td>R$ 5,00</td>
-        </tr>
-        <tr>
-            <td>500 Moedas</td>
-            <td>R$ 25,00</td>
-        </tr>
-        <tr>
-            <td>1000 Moedas</td>
-            <td>R$ 50,00</td>
-        </tr>
-    </table>
+    <div id="fifa" class="category-title">
+        <h2>FIFA - Tabela de Preços</h2>
+        <table>
+            <tr>
+                <th>Moeda</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td>100 Moedas</td>
+                <td>R$ 5,00</td>
+            </tr>
+            <tr>
+                <td>500 Moedas</td>
+                <td>R$ 25,00</td>
+            </tr>
+            <tr>
+                <td>1000 Moedas</td>
+                <td>R$ 50,00</td>
+            </tr>
+        </table>
+    </div>
 
     <!-- Roblox -->
-    <div id="roblox" class="category-title">Roblox - Tabela de Preços</div>
-    <table>
-        <tr>
-            <th>Moeda</th>
-            <th>Preço</th>
-        </tr>
-        <tr>
-            <td>100 Robux</td>
-            <td>R$ 5,00</td>
-        </tr>
-        <tr>
-            <td>500 Robux</td>
-            <td>R$ 25,00</td>
-        </tr>
-        <tr>
-            <td>1000 Robux</td>
-            <td>R$ 50,00</td>
-        </tr>
-    </table>
+    <div id="roblox" class="category-title">
+        <h2>Roblox - Tabela de Preços</h2>
+        <table>
+            <tr>
+                <th>Moeda</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td>100 Robux</td>
+                <td>R$ 5,00</td>
+            </tr>
+            <tr>
+                <td>500 Robux</td>
+                <td>R$ 25,00</td>
+            </tr>
+            <tr>
+                <td>1000 Robux</td>
+                <td>R$ 50,00</td>
+            </tr>
+        </table>
+    </div>
 
     <!-- Opção para compra de conta -->
     <div class="contact">
@@ -207,6 +223,21 @@
     <div class="back-link">
         <a href="index.html">Voltar à Página Inicial</a>
     </div>
+
+    <script>
+        // Função para mostrar a tabela de preços do jogo selecionado
+        function showTable(game) {
+            // Esconde todas as tabelas
+            const tables = document.querySelectorAll('table');
+            tables.forEach(table => {
+                table.style.display = 'none';
+            });
+
+            // Exibe a tabela do jogo selecionado
+            const tableToShow = document.getElementById(game).querySelector('table');
+            tableToShow.style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
