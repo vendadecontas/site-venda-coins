@@ -27,6 +27,8 @@
         }
         .game-title {
             text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
         }
         .prices table {
             width: 100%;
@@ -61,46 +63,3 @@
 <body>
     <header>
         <h1 id="jogo-titulo">Jogo</h1>
-    </header>
-    <div class="container">
-        <label for="nickname">Insira seu Nickname ou ID:</label>
-        <input type="text" id="nickname" name="nickname" placeholder="Seu Nick/ID" style="width: 100%; padding: 10px; margin: 10px 0;">
-
-        <div class="prices">
-            <h3>Tabela de Preços</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Quantidade</th>
-                        <th>Preço</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>100 Coins</td>
-                        <td>R$ 5,00</td>
-                    </tr>
-                    <tr>
-                        <td>500 Coins</td>
-                        <td>R$ 20,00</td>
-                    </tr>
-                    <tr>
-                        <td>1000 Coins</td>
-                        <td>R$ 35,00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <button onclick="alert('Pagamento via PIX selecionado!')">Pagar com PIX</button>
-    </div>
-
-    <script>
-        // Pega o nome do jogo na URL e exibe na página
-        const params = new URLSearchParams(window.location.search);
-        const jogo = params.get('jogo');
-        const titulo = document.getElementById('jogo-titulo');
-        titulo.textContent = jogo ? jogo.charAt(0).toUpperCase() + jogo.slice(1) : 'Jogo';
-    </script>
-</body>
-</html>
