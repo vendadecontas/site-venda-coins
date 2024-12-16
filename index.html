@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Coins</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            margin: 0;
+        }
+        .games-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .game-card {
+            width: 200px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+        .game-card img {
+            width: 100%;
+            height: auto;
+        }
+        .game-card a {
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .game-card a:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha seu Jogo</h1>
+    <div class="games-container">
+        <!-- Card para Free Fire -->
+        <div class="game-card">
+            <img src="freefire.jpg" alt="Free Fire">
+            <a href="freefire.html">Free Fire</a>
+        </div>
+        <!-- Card para Fortnite -->
+        <div class="game-card">
+            <img src="fortnite.jpg" alt="Fortnite">
+            <a href="fortnite.html">Fortnite</a>
+        </div>
+        <!-- Card para Roblox -->
+        <div class="game-card">
+            <img src="roblox.jpg" alt="Roblox">
+            <a href="roblox.html">Roblox</a>
+        </div>
+        <!-- Card para FIFA -->
+        <div class="game-card">
+            <img src="fifa.jpg" alt="FIFA">
+            <a href="fifa.html">FIFA</a>
+        </div>
+        <!-- Card para eFootball -->
+        <div class="game-card">
+            <img src="efootball.jpg" alt="eFootball">
+            <a href="efootball.html">eFootball</a>
+        </div>
+    </div>
+</body>
+</html>
