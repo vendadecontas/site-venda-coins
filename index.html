@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MP Vendas</title>
-    <!-- Importando a fonte Bioweapon -->
-    <link href="https://fonts.googleapis.com/css2?family=Bioweapon&display=swap" rel="stylesheet">
+    <!-- Importando a fonte (será ajustada depois) -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,11 +23,11 @@
             margin: 0;
             font-size: 50px;
             color: #00FF00; /* Cor verde fluorescente */
-            font-family: 'Bioweapon', sans-serif; /* Fonte Bioweapon */
+            font-family: 'Orbitron', sans-serif; /* Fonte Orbitron ou a que escolher */
         }
         .welcome {
             margin: 30px 0;
-            font-size: 40px; /* Aumentei um pouco o tamanho do "BEM VINDO" */
+            font-size: 40px;
             color: #333;
         }
         .games-container {
@@ -36,16 +36,17 @@
             flex-wrap: wrap;
             gap: 30px;
             padding: 30px 20px;
-            margin-top: 80px; /* Distância maior entre o "BEM VINDO" e os jogos */
+            margin-top: 80px;
         }
         .game-card {
-            width: 250px;
+            width: 280px;  /* Aumentei o tamanho do card */
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 20px;  /* Aumentei o tamanho do texto */
         }
         .game-card:hover {
             transform: scale(1.05);
@@ -61,7 +62,7 @@
             color: #333;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 18px;
+            font-size: 22px; /* Aumentei o tamanho da fonte nas categorias */
         }
         .game-card a:hover {
             color: #007BFF;
