@@ -11,7 +11,7 @@
             font-size: 60px;
             font-weight: bold;
             color: #00FF00; /* Cor verde fluorescente */
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         /* Estilo para o "BEM VINDO" */
@@ -21,19 +21,19 @@
             margin-top: 20px;
         }
 
-        /* Contêiner para as imagens dos jogos */
+        /* Estilo para a área de categorias de jogos */
         .game-categories {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 40px;
+            margin-top: 100px; /* Para posicionar as categorias abaixo da metade da tela */
+            gap: 30px;
         }
 
         /* Estilo para as imagens dos jogos */
         .game-categories img {
-            width: 200px;
-            height: 200px;
+            width: 180px; /* Ajustando as imagens para ficarem mais uniformes */
+            height: 180px;
             border-radius: 10px; /* Cantos arredondados */
             transition: transform 0.3s ease-in-out;
         }
@@ -41,6 +41,17 @@
         /* Efeito ao passar o mouse nas imagens */
         .game-categories img:hover {
             transform: scale(1.1);
+        }
+
+        /* Responsividade: ajustando o layout em telas menores */
+        @media (max-width: 768px) {
+            .game-categories {
+                justify-content: center;
+            }
+            .game-categories img {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
