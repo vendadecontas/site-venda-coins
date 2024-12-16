@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Jogo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .game-title {
+            text-align: center;
+        }
+        .prices table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .prices th, .prices td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .prices th {
+            background-color: #f4f4f9;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="jogo-titulo">Jogo</h1>
+    </header>
+    <div class="container">
+        <label for="nickname">Insira seu Nickname ou ID:</label>
+        <input type="text" id="nickname" name="nickname" placeholder="Seu Nick/ID" style="width: 100%; padding: 10px; margin: 10px 0;">
+
+        <div class="prices">
+            <h3>Tabela de Preços</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>100 Coins</td>
+                        <td>R$ 5,00</td>
+                    </tr>
+                    <tr>
+                        <td>500 Coins</td>
+                        <td>R$ 20,00</td>
+                    </tr>
+                    <tr>
+                        <td>1000 Coins</td>
+                        <td>R$ 35,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button onclick="alert('Pagamento via PIX selecionado!')">Pagar com PIX</button>
+    </div>
+
+    <script>
+        // Pega o nome do jogo na URL e exibe na página
+        const params = new URLSearchParams(window.location.search);
+        const jogo = params.get('jogo');
+        const titulo = document.getElementById('jogo-titulo');
+        titulo.textContent = jogo ? jogo.charAt(0).toUpperCase() + jogo.slice(1) : 'Jogo';
+    </script>
+</body>
+</html>
