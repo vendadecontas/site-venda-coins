@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Coins - Free Fire, Fortnite, Roblox, FIFA, eFootball</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .game-option {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Venda de Coins</h1>
+        <p>Free Fire, Fortnite, Roblox, FIFA, eFootball</p>
+    </header>
+    <div class="container">
+        <h2>Faça seu Pedido</h2>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="game">Selecione o Jogo:</label>
+                <select id="game" name="game" required>
+                    <option value="">Escolha um jogo</option>
+                    <option value="free_fire">Free Fire</option>
+                    <option value="fortnite">Fortnite</option>
+                    <option value="roblox">Roblox</option>
+                    <option value="fifa">FIFA</option>
+                    <option value="efootball">eFootball</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nickname">Nickname no Jogo:</label>
+                <input type="text" id="nickname" name="nickname" placeholder="Digite seu nickname" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Quantidade de Coins:</label>
+                <input type="number" id="amount" name="amount" placeholder="Exemplo: 1000" required>
+            </div>
+            <div class="form-group">
+                <label>Chave Pix para Pagamento:</label>
+                <p style="background: #f8f9fa; padding: 10px; border-radius: 4px;">000.000.000-00 (CPF)</p>
+            </div>
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Pedido enviado! Por favor, faça o pagamento via Pix para a chave informada.');
+        });
+    </script>
+</body>
+</html>
