@@ -61,6 +61,21 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        .category-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .category-link a {
+            color: #00FF00;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            background-color: #000;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -69,8 +84,17 @@
         <h1>Tabela de Preços - MP Vendas</h1>
     </div>
 
-    <!-- FreeFire -->
-    <div class="category-title">FreeFire - Tabela de Preços</div>
+    <!-- Links para navegar entre categorias -->
+    <div class="category-link">
+        <a href="#freefire">Free Fire</a>
+        <a href="#fortnite">Fortnite</a>
+        <a href="#efootball">eFootball</a>
+        <a href="#fifa">FIFA</a>
+        <a href="#roblox">Roblox</a>
+    </div>
+
+    <!-- Free Fire -->
+    <div id="freefire" class="category-title">Free Fire - Tabela de Preços</div>
     <table>
         <tr>
             <th>Moeda</th>
@@ -91,7 +115,7 @@
     </table>
 
     <!-- Fortnite -->
-    <div class="category-title">Fortnite - Tabela de Preços</div>
+    <div id="fortnite" class="category-title">Fortnite - Tabela de Preços</div>
     <table>
         <tr>
             <th>Moeda</th>
@@ -112,7 +136,7 @@
     </table>
 
     <!-- eFootball -->
-    <div class="category-title">eFootball - Tabela de Preços</div>
+    <div id="efootball" class="category-title">eFootball - Tabela de Preços</div>
     <table>
         <tr>
             <th>Moeda</th>
@@ -132,8 +156,8 @@
         </tr>
     </table>
 
-    <!-- Fifa -->
-    <div class="category-title">Fifa - Tabela de Preços</div>
+    <!-- FIFA -->
+    <div id="fifa" class="category-title">FIFA - Tabela de Preços</div>
     <table>
         <tr>
             <th>Moeda</th>
@@ -154,7 +178,7 @@
     </table>
 
     <!-- Roblox -->
-    <div class="category-title">Roblox - Tabela de Preços</div>
+    <div id="roblox" class="category-title">Roblox - Tabela de Preços</div>
     <table>
         <tr>
             <th>Moeda</th>
