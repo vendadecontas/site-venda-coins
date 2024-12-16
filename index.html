@@ -4,28 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MP Vendas</title>
+    <style>
+        /* Estilo para o logo MP VENDAS */
+        .logo {
+            text-align: center;
+            font-size: 60px;
+            font-weight: bold;
+            color: #00FF00; /* Cor verde fluorescente */
+            margin-top: 20px;
+        }
+
+        /* Estilo para o "BEM VINDO" */
+        .welcome {
+            text-align: center;
+            font-size: 40px;
+            margin-top: 20px;
+        }
+
+        /* Contêiner para as imagens dos jogos */
+        .game-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        /* Estilo para as imagens dos jogos */
+        .game-categories img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px; /* Cantos arredondados */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Efeito ao passar o mouse nas imagens */
+        .game-categories img:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Exemplo de logo MP VENDAS -->
-    <div style="text-align: center; font-size: 50px; font-weight: bold; color: green;">
+    <!-- Logo MP VENDAS -->
+    <div class="logo">
         MP VENDAS
     </div>
 
     <!-- Mensagem de boas-vindas -->
-    <div style="text-align: center; font-size: 40px; margin-top: 20px;">
+    <div class="welcome">
         BEM VINDO
     </div>
 
-    <!-- Exemplo das categorias de jogos -->
-    <div style="text-align: center; margin-top: 40px;">
-        <h2>Escolha seu Jogo</h2>
+    <!-- Categorias de jogos -->
+    <div class="game-categories">
         <div>
-            <img src="img/freefire.jpg" alt="Free Fire" style="width: 200px; height: 200px; margin: 20px;">
-            <img src="img/fortnite.jpg" alt="Fortnite" style="width: 200px; height: 200px; margin: 20px;">
-            <img src="img/roblox.jpg" alt="Roblox" style="width: 200px; height: 200px; margin: 20px;">
-            <img src="img/fifa.jpg" alt="FIFA" style="width: 200px; height: 200px; margin: 20px;">
-            <img src="img/efootball.jpg" alt="eFootball" style="width: 200px; height: 200px; margin: 20px;">
+            <img src="img/freefire.jpg" alt="Free Fire">
+        </div>
+        <div>
+            <img src="img/fortnite.jpg" alt="Fortnite">
+        </div>
+        <div>
+            <img src="img/roblox.jpg" alt="Roblox">
+        </div>
+        <div>
+            <img src="img/fifa.jpg" alt="FIFA">
+        </div>
+        <div>
+            <img src="img/efootball.jpg" alt="eFootball">
         </div>
     </div>
 
