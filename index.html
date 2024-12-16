@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Coins</title>
+    <title>MP Vendas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
             margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
         }
-        h1 {
+        header {
             background-color: #333;
             color: #fff;
             padding: 15px 0;
+        }
+        header h1 {
             margin: 0;
+            font-size: 24px;
+        }
+        .welcome {
+            margin: 20px 0;
+            font-size: 20px;
+            color: #333;
         }
         .games-container {
             display: flex;
@@ -54,32 +63,42 @@
     </style>
 </head>
 <body>
-    <h1>Escolha seu Jogo</h1>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>MP Vendas</h1>
+    </header>
+    
+    <!-- Texto de Boas-Vindas -->
+    <div class="welcome">
+        <p>BEM VINDO</p>
+    </div>
+    
+    <!-- Seção de Jogos -->
     <div class="games-container">
         <!-- Card para Free Fire -->
         <div class="game-card">
-            <img src="free fire.jpg" alt="Free Fire">
-            <a href="free fire.html">Free Fire</a>
+            <img src="img/freefire.jpg" alt="Free Fire">
+            <a href="freefire.html">Free Fire</a>
         </div>
         <!-- Card para Fortnite -->
         <div class="game-card">
-            <img src="Fortnite.jpg" alt="Fortnite">
-            <a href="Fortnite.html">Fortnite</a>
+            <img src="img/fortnite.jpg" alt="Fortnite">
+            <a href="fortnite.html">Fortnite</a>
         </div>
         <!-- Card para Roblox -->
         <div class="game-card">
-            <img src="roblox.jpg" alt="Roblox">
+            <img src="img/roblox.jpg" alt="Roblox">
             <a href="roblox.html">Roblox</a>
         </div>
         <!-- Card para FIFA -->
         <div class="game-card">
-            <img src="Fifa.jpg" alt="FIFA">
-            <a href="Fifa.html">FIFA</a>
+            <img src="img/fifa.jpg" alt="FIFA">
+            <a href="fifa.html">FIFA</a>
         </div>
         <!-- Card para eFootball -->
         <div class="game-card">
-            <img src="eFootball.jpg" alt="eFootball">
-            <a href="eFootball.html">eFootball</a>
+            <img src="img/efootball.jpg" alt="eFootball">
+            <a href="efootball.html">eFootball</a>
         </div>
     </div>
 </body>
