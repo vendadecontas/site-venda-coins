@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MP Vendas</title>
     <style>
-        /* Estilo geral */
-        body {
-            font-family: Arial, sans-serif;
-        }
-
+        /* Estilo para o logo MP VENDAS */
         .logo {
             text-align: center;
             font-size: 60px;
@@ -18,12 +14,14 @@
             margin-top: 40px;
         }
 
+        /* Estilo para o "BEM VINDO" */
         .welcome {
             text-align: center;
             font-size: 40px;
             margin-top: 20px;
         }
 
+        /* Estilo para a bio */
         .bio {
             text-align: center;
             font-size: 14px;
@@ -36,6 +34,7 @@
             border-radius: 8px;
         }
 
+        /* Estilo para a área de categorias de jogos */
         .game-categories {
             display: flex;
             justify-content: center;
@@ -44,121 +43,145 @@
             gap: 30px;
         }
 
+        /* Estilo para as imagens dos jogos */
         .game-categories img {
             width: 220px;
             height: 120px;
             border-radius: 10px;
             transition: transform 0.3s ease-in-out;
-            cursor: pointer;
         }
 
         .game-categories img:hover {
             transform: scale(1.1);
         }
 
-        #content {
-            display: none; /* Oculto inicialmente */
+        /* Estilo para a área dinâmica */
+        .dynamic-content {
+            margin-top: 30px;
+            text-align: center;
         }
 
-        #back-button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
+        /* Estilo para a tabela */
+        table {
+            margin: 0 auto; /* Centraliza a tabela */
+            width: 80%; /* Define a largura da tabela */
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        table th {
             background-color: #00FF00;
             color: white;
-            text-align: center;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 120px;
-            text-decoration: none;
+            font-size: 18px;
         }
 
-        #back-button:hover {
-            background-color: #007700;
+        table td {
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <!-- Logo -->
-    <div class="logo">MP VENDAS</div>
 
-    <!-- Mensagem de boas-vindas -->
-    <div class="welcome">BEM VINDO</div>
+    <div class="logo">
+        MP VENDAS
+    </div>
 
-    <!-- Bio -->
+    <div class="welcome">
+        BEM VINDO
+    </div>
+
     <div class="bio">
         <p>Oferecemos skins, moedas e contas para os melhores jogos, como Free Fire, Fortnite, Roblox, FIFA e eFootball. Sua diversão e segurança são a nossa prioridade!</p>
     </div>
 
-    <!-- Categorias de jogos -->
     <div class="game-categories">
-        <img src="img/roblox.jpg" alt="Roblox" onclick="loadCategory('roblox')">
-        <img src="img/free fire.jpg" alt="Free Fire" onclick="loadCategory('free_fire')">
-        <img src="img/Fortnite.jpg" alt="Fortnite" onclick="loadCategory('fortnite')">
-        <img src="img/Fifa.jpg" alt="FIFA" onclick="loadCategory('fifa')">
-        <img src="img/eFootball.jpg" alt="eFootball" onclick="loadCategory('efootball')">
+        <div>
+            <a href="#" onclick="loadCategory('Roblox')">
+                <img src="img/roblox.jpg" alt="Roblox">
+            </a>
+        </div>
+        <div>
+            <a href="#" onclick="loadCategory('Free Fire')">
+                <img src="img/free fire.jpg" alt="Free Fire">
+            </a>
+        </div>
+        <div>
+            <a href="#" onclick="loadCategory('Fortnite')">
+                <img src="img/Fortnite.jpg" alt="Fortnite">
+            </a>
+        </div>
+        <div>
+            <a href="#" onclick="loadCategory('FIFA')">
+                <img src="img/Fifa.jpg" alt="FIFA">
+            </a>
+        </div>
+        <div>
+            <a href="#" onclick="loadCategory('eFootball')">
+                <img src="img/eFootball.jpg" alt="eFootball">
+            </a>
+        </div>
     </div>
 
-    <!-- Conteúdo dinâmico -->
-    <div id="content"></div>
-
-    <!-- Botão Voltar -->
-    <a id="back-button" onclick="goBack()">Voltar</a>
+    <div class="dynamic-content" id="dynamic-content"></div>
 
     <script>
-        // Carregar conteúdo da categoria
         function loadCategory(category) {
-            const content = document.getElementById('content');
-            const categories = {
-                roblox: `<h2>Preços de Robux - Roblox</h2>
-                         <table border="1">
-                             <tr><th>Quantidade</th><th>Preço</th></tr>
-                             <tr><td>100 Robux</td><td>R$ 5,00</td></tr>
-                             <tr><td>500 Robux</td><td>R$ 20,00</td></tr>
-                             <tr><td>1000 Robux</td><td>R$ 35,00</td></tr>
-                         </table>`,
-                free_fire: `<h2>Preços de Diamantes - Free Fire</h2>
-                            <table border="1">
-                                <tr><th>Quantidade</th><th>Preço</th></tr>
-                                <tr><td>100 Diamantes</td><td>R$ 3,00</td></tr>
-                                <tr><td>500 Diamantes</td><td>R$ 12,00</td></tr>
-                                <tr><td>1000 Diamantes</td><td>R$ 22,00</td></tr>
-                            </table>`,
-                fortnite: `<h2>Preços de V-Bucks - Fortnite</h2>
-                           <table border="1">
-                               <tr><th>Quantidade</th><th>Preço</th></tr>
-                               <tr><td>100 V-Bucks</td><td>R$ 5,00</td></tr>
-                               <tr><td>500 V-Bucks</td><td>R$ 20,00</td></tr>
-                               <tr><td>1000 V-Bucks</td><td>R$ 40,00</td></tr>
-                           </table>`,
-                fifa: `<h2>Preços de FIFA Coins</h2>
-                       <table border="1">
-                           <tr><th>Quantidade</th><th>Preço</th></tr>
-                           <tr><td>10,000 Coins</td><td>R$ 10,00</td></tr>
-                           <tr><td>50,000 Coins</td><td>R$ 45,00</td></tr>
-                       </table>`,
-                efootball: `<h2>Preços de eFootball Coins</h2>
-                            <table border="1">
-                                <tr><th>Quantidade</th><th>Preço</th></tr>
-                                <tr><td>10,000 Coins</td><td>R$ 15,00</td></tr>
-                                <tr><td>50,000 Coins</td><td>R$ 65,00</td></tr>
-                            </table>`
-            };
-            content.innerHTML = categories[category];
-            document.querySelector('.game-categories').style.display = 'none';
-            document.querySelector('.bio').style.display = 'none';
-            document.getElementById('back-button').style.display = 'block';
-            content.style.display = 'block';
-        }
+            const content = document.getElementById('dynamic-content');
+            let table = `
+                <h2>Preços de Moedas - ${category}</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantidade</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
 
-        // Voltar para a tela inicial
-        function goBack() {
-            document.getElementById('content').style.display = 'none';
-            document.querySelector('.game-categories').style.display = 'flex';
-            document.querySelector('.bio').style.display = 'block';
-            document.getElementById('back-button').style.display = 'none';
+            // Adicionando exemplos específicos para cada categoria
+            if (category === "Roblox") {
+                table += `
+                    <tr><td>100 Robux</td><td>R$ 5,00</td></tr>
+                    <tr><td>500 Robux</td><td>R$ 25,00</td></tr>
+                    <tr><td>1.000 Robux</td><td>R$ 50,00</td></tr>
+                `;
+            } else if (category === "Free Fire") {
+                table += `
+                    <tr><td>100 Diamantes</td><td>R$ 4,99</td></tr>
+                    <tr><td>520 Diamantes</td><td>R$ 24,99</td></tr>
+                    <tr><td>1.090 Diamantes</td><td>R$ 49,99</td></tr>
+                `;
+            } else if (category === "Fortnite") {
+                table += `
+                    <tr><td>1.000 V-Bucks</td><td>R$ 30,00</td></tr>
+                    <tr><td>2.800 V-Bucks</td><td>R$ 70,00</td></tr>
+                    <tr><td>5.000 V-Bucks</td><td>R$ 150,00</td></tr>
+                `;
+            } else if (category === "FIFA") {
+                table += `
+                    <tr><td>500 FIFA Coins</td><td>R$ 20,00</td></tr>
+                    <tr><td>1.000 FIFA Coins</td><td>R$ 35,00</td></tr>
+                    <tr><td>2.000 FIFA Coins</td><td>R$ 60,00</td></tr>
+                `;
+            } else if (category === "eFootball") {
+                table += `
+                    <tr><td>100 eFootball Coins</td><td>R$ 10,00</td></tr>
+                    <tr><td>500 eFootball Coins</td><td>R$ 40,00</td></tr>
+                    <tr><td>1.000 eFootball Coins</td><td>R$ 75,00</td></tr>
+                `;
+            }
+
+            table += `</tbody></table>`;
+            content.innerHTML = table;
         }
     </script>
+
 </body>
 </html>
