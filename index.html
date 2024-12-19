@@ -93,6 +93,9 @@
             const targetSection = document.getElementById(category);
             if (targetSection) {
                 targetSection.style.display = 'block';
+
+                // Rola a página até a seção
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
     </script>
