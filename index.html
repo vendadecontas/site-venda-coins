@@ -102,6 +102,9 @@
     </style>
     <script>
         function showCategory(category) {
+            // Esconde a tela inicial
+            document.querySelector('.game-categories').style.display = 'none';
+
             // Esconde todas as seções
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.style.display = 'none');
@@ -118,6 +121,9 @@
 
         // Função para voltar para a tela inicial
         function backToHome() {
+            // Mostra a tela inicial
+            document.querySelector('.game-categories').style.display = 'flex';
+
             // Esconde todas as seções
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.style.display = 'none');
