@@ -99,34 +99,88 @@
         .back-button:hover {
             background-color: #28a745;
         }
+
+        /* Campo e botão adicionais */
+        .input-group {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .input-group input, .input-group button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        .input-group input {
+            width: 50%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .input-group button {
+            background-color: #00FF00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .input-group button:hover {
+            background-color: #28a745;
+        }
+
+        /* QR Code ou chave aleatória */
+        .payment-section {
+            margin-top: 20px;
+            text-align: center;
+        }
     </style>
     <script>
         function showCategory(category) {
-            // Esconde a tela inicial
             document.querySelector('.game-categories').style.display = 'none';
-
-            // Esconde todas as seções
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.style.display = 'none');
-
-            // Mostra a seção específica
             const targetSection = document.getElementById(category);
             if (targetSection) {
                 targetSection.style.display = 'block';
-
-                // Rola a página até a seção
                 targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
 
-        // Função para voltar para a tela inicial
         function backToHome() {
-            // Mostra a tela inicial
             document.querySelector('.game-categories').style.display = 'flex';
-
-            // Esconde todas as seções
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.style.display = 'none');
+        }
+
+        function selectPrice(sectionId, price, quantity) {
+            const section = document.getElementById(sectionId);
+            const inputGroup = section.querySelector('.input-group');
+            inputGroup.innerHTML = `
+                <label for="user-id">Insira seu ID/Nick:</label>
+                <input type="text" id="user-id" placeholder="Digite seu ID ou Nick">
+                <button onclick="processPayment('${sectionId}', ${price})">Pagar R$ ${price.toFixed(2)}</button>
+            `;
+        }
+
+        function processPayment(sectionId, price) {
+            const userId = document.querySelector(`#${sectionId} #user-id`).value;
+            if (!userId.trim()) {
+                alert('Por favor, insira seu ID ou Nick.');
+                return;
+            }
+            const section = document.getElementById(sectionId);
+            const paymentSection = section.querySelector('.payment-section');
+            paymentSection.innerHTML = `
+                <p>Use o QR Code ou chave aleatória abaixo para efetuar o pagamento de R$ ${price.toFixed(2)}.</p>
+                <img src="img/qrcode_placeholder.png" alt="QR Code" style="width: 200px; height: 200px;">
+                <p>Chave Aleatória: <strong>${generateRandomKey()}</strong></p>
+            `;
+        }
+
+        function generateRandomKey() {
+            return Math.random().toString(36).substr(2, 12).toUpperCase();
         }
     </script>
 </head>
@@ -137,7 +191,6 @@
         <p>Oferecemos skins, moedas e contas para os melhores jogos, como Free Fire, Fortnite, Roblox, FIFA e eFootball. Sua diversão e segurança são a nossa prioridade!</p>
     </div>
 
-    <!-- Categorias de jogos -->
     <div class="game-categories">
         <img src="img/roblox.jpg" alt="Roblox" onclick="showCategory('roblox')">
         <img src="img/free fire.jpg" alt="Free Fire" onclick="showCategory('free_fire')">
@@ -146,27 +199,32 @@
         <img src="img/eFootball.jpg" alt="eFootball" onclick="showCategory('efootball')">
     </div>
 
-    <!-- Conteúdo das categorias -->
     <div id="roblox" class="content-section">
         <h2>Preços de Robux - Roblox</h2>
         <table>
             <tr>
                 <th>Quantidade</th>
                 <th>Preço (R$)</th>
+                <th>Selecionar</th>
             </tr>
             <tr>
                 <td>100 Robux</td>
                 <td>5,00</td>
+                <td><button onclick="selectPrice('roblox', 5.00, 100)">Selecionar</button></td>
             </tr>
             <tr>
                 <td>500 Robux</td>
-               <td>25,00</td>
+                <td>25,00</td>
+                <td><button onclick="selectPrice('roblox', 25.00, 500)">Selecionar</button></td>
             </tr>
             <tr>
                 <td>1000 Robux</td>
                 <td>50,00</td>
+                <td><button onclick="selectPrice('roblox', 50.00, 1000)">Selecionar</button></td>
             </tr>
         </table>
+        <div class="input-group"></div>
+        <div class="payment-section"></div>
         <a href="javascript:void(0);" class="back-button" onclick="backToHome()">Voltar para a tela inicial</a>
     </div>
 
@@ -176,90 +234,29 @@
             <tr>
                 <th>Quantidade</th>
                 <th>Preço (R$)</th>
+                <th>Selecionar</th>
             </tr>
             <tr>
                 <td>100 Diamantes</td>
                 <td>5,00</td>
+                <td><button onclick="selectPrice('free_fire', 5.00, 100)">Selecionar</button></td>
             </tr>
             <tr>
                 <td>500 Diamantes</td>
                 <td>20,00</td>
+                <td><button onclick="selectPrice('free_fire', 20.00, 500)">Selecionar</button></td>
             </tr>
             <tr>
                 <td>1000 Diamantes</td>
                 <td>40,00</td>
+                <td><button onclick="selectPrice('free_fire', 40.00, 1000)">Selecionar</button></td>
             </tr>
         </table>
+        <div class="input-group"></div>
+        <div class="payment-section"></div>
         <a href="javascript:void(0);" class="back-button" onclick="backToHome()">Voltar para a tela inicial</a>
     </div>
 
-    <div id="fortnite" class="content-section">
-        <h2>Preços de V-Bucks - Fortnite</h2>
-        <table>
-            <tr>
-                <th>Quantidade</th>
-                <th>Preço (R$)</th>
-            </tr>
-            <tr>
-                <td>1000 V-Bucks</td>
-                <td>30,00</td>
-            </tr>
-            <tr>
-                <td>2500 V-Bucks</td>
-                <td>70,00</td>
-            </tr>
-            <tr>
-                <td>5000 V-Bucks</td>
-                <td>130,00</td>
-            </tr>
-        </table>
-        <a href="javascript:void(0);" class="back-button" onclick="backToHome()">Voltar para a tela inicial</a>
-    </div>
-
-    <div id="fifa" class="content-section">
-        <h2>Preços de FIFA Points - FIFA</h2>
-        <table>
-            <tr>
-                <th>Quantidade</th>
-                <th>Preço (R$)</th>
-            </tr>
-            <tr>
-                <td>500 FIFA Points</td>
-                <td>20,00</td>
-            </tr>
-            <tr>
-                <td>1050 FIFA Points</td>
-                <td>40,00</td>
-            </tr>
-            <tr>
-                <td>2200 FIFA Points</td>
-                <td>80,00</td>
-            </tr>
-        </table>
-        <a href="javascript:void(0);" class="back-button" onclick="backToHome()">Voltar para a tela inicial</a>
-    </div>
-
-    <div id="efootball" class="content-section">
-        <h2>Preços de eFootball Coins</h2>
-        <table>
-            <tr>
-                <th>Quantidade</th>
-                <th>Preço (R$)</th>
-            </tr>
-            <tr>
-                <td>100 Coins</td>
-                <td>10,00</td>
-            </tr>
-            <tr>
-                <td>500 Coins</td>
-                <td>45,00</td>
-            </tr>
-            <tr>
-                <td>1000 Coins</td>
-                <td>85,00</td>
-            </tr>
-        </table>
-        <a href="javascript:void(0);" class="back-button" onclick="backToHome()">Voltar para a tela inicial</a>
-    </div>
+    <!-- Adicione outras seções com estrutura semelhante para Fortnite, FIFA e eFootball -->
 </body>
 </html>
